@@ -1,0 +1,40 @@
+name: Build and Test Pipeline - Laxman Neupane
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Build
+        run: echo "Starting build process..."
+
+      - name: Simulate Compilation
+        run: sleep 3
+
+      - name: Build Success Message
+        run: echo "Build completed successfully"
+
+      - name: Built By
+        run: echo "Built by Laxman Neupane"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Testing
+        run: echo "Running automated tests..."
+
+      - name: Simulate Tests
+        run: sleep 2
+
+      - name: Show Date
+        run: date
+
+      - name: Test Success Message
+        run: echo "All tests passed for Laxman Neupane"
